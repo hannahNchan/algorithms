@@ -1,5 +1,5 @@
-const h = [1,3,1,3,1,4,1,3,2,5,5,5,5,1,1,5,5,1,5,2,5,5,5,5,5,5];
-const word = 'torn';
+const h = [1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7];
+const word = 'zaba';
 
 let alphabet = [];
 let alphabetSeted = {};
