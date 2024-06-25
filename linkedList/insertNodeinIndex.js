@@ -1,24 +1,23 @@
 const { SinglyLinkedListNode, SinglyLinkedList } = require("./SinglyLinkedListClass");
-	
-const linList = new SinglyLinkedList();
+
+let list = new SinglyLinkedList();
 
 const insertNodes = () => {
-	linList.insertNode(16);
-	linList.insertNode(13);
-	linList.insertNode(7);
+	list.insertNode(10);
+	list.insertNode(20);
+	list.insertNode(40);
+	list.insertNode(30);
 }
 
 const insertNodeAtPosition = (llist, data, position) => {
+
 	insertNodes();
-  let currentNode = linList.head;
-	while (currentNode !== null) {
-		console.log(currentNode.data);
-		currentNode = currentNode.next;
-	}
+	console.log(list.head.data); // 10
+	console.log(list.head.next.data); // 20
+	console.log(list.head.next.next.data); // 30
+	console.log(list.head.next.next.next.data); // 40
+	console.log(list.size); // 4
+
 }
 
-const llist = [16, 13, 7];
-const data = 1;
-const position = 2;
-
-insertNodeAtPosition(llist, data, position);
+insertNodeAtPosition();
