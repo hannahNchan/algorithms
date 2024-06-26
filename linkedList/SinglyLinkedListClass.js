@@ -1,38 +1,32 @@
-class Node {
-  constructor(data, next) {
+class SinglyLinkedListNode {
+  constructor(data){
     this.data = data;
-    this.next = next;
+    this.next = null;
   }
 }
 
 class SinglyLinkedList {
   constructor() {
     this.head = null;
-    this.size = 0;
+    this.tail = null;
   }
 
-  insertNode(nodeData) {
-    let node = new Node(nodeData, null);
+  insertNode(dataNode) {
+    const node = new SinglyLinkedListNode(dataNode);
 
     if (this.head == null) {
       this.head = node;
     } else {
-      let current = this.head;
-      console.log(current)
-      while (current.next != null) {
-        current = current.next;
-      }
-
-      current.next = node;
-
+      this.tail.next = node;
     }
-    this.size++;
+
+    this.tail = node;
+
   }
 
 }
 
 module.exports = {
-  Node,
+  SinglyLinkedListNode,
   SinglyLinkedList
 };
-
