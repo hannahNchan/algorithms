@@ -1,9 +1,9 @@
 function isBalanced(s) {
   const openBrackets = ['{', '[', '('];
   const corresponseBracket = {
-    ']': '[',
-    '}': '{',
-    ')': '('
+    '{': '}',
+    '[': ']',
+    '(': ')'
   };
   const stack = [];
   const isOpenBracket = (char) => openBrackets.includes(char);
@@ -13,11 +13,11 @@ function isBalanced(s) {
     if (isOpenBracket(char)) {
       stack.push(char);
     } else {
-      if (isStackEmpty) {
+      if (stack.length === 0) {
         return 'NO';
       } else {
         let lastBracket = stack.pop();
-        if (char !== lastBracket) {
+        if (char !== corresponseBracket[lastBracket]) {
           return 'NO';
         }
       }
@@ -26,6 +26,6 @@ function isBalanced(s) {
   return isStackEmpty ? 'YES' : 'NO';
 }
 
-const string = '{{[[(())]]}}'
-
-console.log(isBalanced(string));
+console.log(isBalanced('{(([])[])[]}'));
+console.log(isBalanced('{(([])[])[]]}'));
+console.log(isBalanced('{(([])[])[]}[]'));
